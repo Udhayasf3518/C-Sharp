@@ -17,7 +17,7 @@ namespace VaccinationDrive
         public Gen Gender { get; set; }
 
         
-        public List<VaccinDetails> VaccinDetails { get; set; }
+        public List<VaccineDetails> VaccineDetails { get; set; }
 
         public Benificary(string name,long phone,string city,int age,Gen gender)
         {

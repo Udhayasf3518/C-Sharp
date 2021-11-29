@@ -43,8 +43,6 @@ namespace VaccinationDrive
                 c = Console.ReadLine().ToLower();
             }
             while (c == "yes");
-
-
             Console.ReadKey();
         }
 
@@ -54,8 +52,6 @@ namespace VaccinationDrive
         {
             var firstUser = new Benificary("Udhaya", 12345, "Karur", 23, (Gen)1);
             var seconduser = new Benificary("Kamala", 67890, "Chennai",35, (Gen)2);
-
-
             benificaryList.Add(firstUser);
             benificaryList.Add(seconduser);
         }
@@ -80,23 +76,17 @@ namespace VaccinationDrive
                 Console.Write(" 1.Male\n 2.Female\n 3.Transgender\n 4.Others");
                 Console.Write("Benificary Gender : ");
                 Gen Gender = (Gen)int.Parse(Console.ReadLine());
-
                 Console.WriteLine("--------------------------------------");
-
                 var Details = new Benificary(name, phoneNumber, city, age, Gender);
                 benificaryList.Add(Details);
-
-                Console.WriteLine("--------Registration Success--------");
+                Console.WriteLine("-------->> Registration Success <<--------");
                 Console.WriteLine($"Your Register Number : {Details.RegNumber}");
                 Console.WriteLine("--------------------------------------");
-
                 Console.Write("\nDo You Want to Continue ? ( yes / no ) : ");
                 o = Console.ReadLine().ToLower();
             }
             while (o == "yes");
         }
-
-
 
         /// <summary>
         /// Vaccine details
@@ -135,13 +125,12 @@ namespace VaccinationDrive
                                 Console.WriteLine("--------------------------------------");
                                 if (details.RegNumber == RegNumber)
                                 {
-                                    VaccinDetails user = new VaccinDetails(type, DateTime.Now);
-
-                                    if (details.VaccinDetails == null)
+                                    VaccineDetails user = new VaccineDetails(type, DateTime.Now);
+                                    if (details.VaccineDetails == null)
                                     {
-                                        details.VaccinDetails = new List<VaccinDetails>();
+                                        details.VaccineDetails = new List<VaccineDetails>();
                                     }
-                                    details.VaccinDetails.Add(user);
+                                    details.VaccineDetails.Add(user);
                                 }
                                 Console.WriteLine("----->> You Have Vaccinated Succesfully <<-----");
                                 break;
@@ -156,7 +145,6 @@ namespace VaccinationDrive
                             default:
                                 Console.WriteLine("Invalid Option");
                                 break;
-
                         }
                         Console.WriteLine("--------------------------------------");
                         Console.Write("Do you want to continue ? ( yes / no ) : ");
@@ -176,15 +164,15 @@ namespace VaccinationDrive
             {
                 if (detail.RegNumber == regno)
                 {
-                    if (detail.VaccinDetails != null)
+                    if (detail.VaccineDetails != null)
                     {
-                        if (detail.VaccinDetails.Count == 1)
+                        if (detail.VaccineDetails.Count == 1)
                         {
-                            Console.WriteLine($"Next Vaccine Due :{0}", detail.VaccinDetails[0].Type);
-                            Console.WriteLine($"Next Due date :{0}", detail.VaccinDetails[0].Date.AddDays(15));
+                            Console.WriteLine($"Next Vaccine Due :{0}", detail.VaccineDetails[0].Type);
+                            Console.WriteLine($"Next Due date :{0}", detail.VaccineDetails[0].Date.AddDays(15));
                         }
 
-                        else if (detail.VaccinDetails.Count == 2)
+                        else if (detail.VaccineDetails.Count == 2)
                         {
                             Console.WriteLine("--------------------------------------");
                             Console.WriteLine("----->> You Have Completed The Vaccination Course <<------");
@@ -204,9 +192,9 @@ namespace VaccinationDrive
             {
                 if (detail.RegNumber == RegNumber)
                 {
-                    if (detail.VaccinDetails != null)
+                    if (detail.VaccineDetails != null)
                     {
-                        Console.WriteLine($"Name : {detail.Name}\n" +$"Age : {detail.Age}\n" +$"Gender : {detail.Gender}\n" + $"Mobile Number : {detail.PhoneNumber} \n" + $"City : {detail.City}\n" + $"Vaccination : {detail.VaccinDetails[0].Type}");
+                        Console.WriteLine($"Name : {detail.Name}\n" +$"Age : {detail.Age}\n" +$"Gender : {detail.Gender}\n" + $"Mobile Number : {detail.PhoneNumber} \n" + $"City : {detail.City}\n" + $"Vaccination : {detail.VaccineDetails[0].Type}");
                     }
                 }
             }

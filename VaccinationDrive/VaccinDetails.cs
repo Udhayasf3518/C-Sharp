@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace VaccinationDrive
 {
-    class VaccinDetails
+    class VaccineDetails
     {
         public DateTime Date { get; set; }
         public Vaccine Type { get; set; }
 
-        public VaccinDetails(Vaccine type,DateTime date)
+        public VaccineDetails(Vaccine type,DateTime date)
         {
             this.Date = date;
             this.Type = type;
